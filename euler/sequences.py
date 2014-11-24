@@ -20,6 +20,23 @@ class FibonacciSequence:
         return fib
 
 
+class TriangleNumberSequence:
+    def __init__(self):
+        pass
+
+    def __iter__(self):
+        self.current = 0
+        self.last = 0
+        self.count = 0
+        return self
+
+    def __next__(self):
+        self.last = self.current
+        self.count += 1
+        self.current = self.last + self.count
+        return self.current
+
+
 def PrimeGenerator():
     D = {}
     yield 2

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import argparse
+import math
 
 
 def parse_options(args):
@@ -41,3 +42,18 @@ def is_prime(n):
             return False
 
     return True
+
+
+def is_multiple_of(num, multiple):
+    if num == 0:
+        return False
+
+    return num % multiple == 0
+
+
+def number_of_divisors(n):
+    if n == 1:
+        return 1
+
+    return len([x for x in range(1, int(math.sqrt(n)))
+                if is_multiple_of(n, x)]) * 2
