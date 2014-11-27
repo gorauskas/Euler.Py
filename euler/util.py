@@ -57,3 +57,10 @@ def number_of_divisors(n):
 
     return len([x for x in range(1, int(math.sqrt(n)))
                 if is_multiple_of(n, x)]) * 2
+
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+
+    return n * factorial(n - 1)
