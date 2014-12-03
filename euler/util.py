@@ -59,6 +59,16 @@ def number_of_divisors(n):
                 if is_multiple_of(n, x)]) * 2
 
 
+def sum_of_divisors(n):
+    c = 1
+    for x in range(2, int(math.sqrt(n))):
+        if n % x == 0:
+            c += x
+            if x != n / x:
+                c += n / x
+    return c
+
+
 def factorial(n):
     if n == 0 or n == 1:
         return 1
