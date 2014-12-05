@@ -61,7 +61,7 @@ def number_of_divisors(n):
 
 def sum_of_divisors(n):
     c = 1
-    for x in range(2, int(math.sqrt(n))):
+    for x in range(2, int(math.sqrt(n))+1):
         if n % x == 0:
             c += x
             if x != n / x:
