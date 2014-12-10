@@ -20,6 +20,26 @@ class FibonacciSequence:
         return fib
 
 
+class FibonacciDigitLengthSequence:
+    def __init__(self):
+        pass
+
+    def _digit_len(self, n):
+        return len(str(n))
+
+    def __iter__(self):
+        self.a, self.b = 0, 1
+        self.idx = 0
+        return self
+
+    def __next__(self):
+        fib = self.a
+        self.a, self.b = self.b, self.a + self.b
+        t = (self.idx, self._digit_len(fib))
+        self.idx += 1
+        return t
+
+
 class TriangleNumberSequence:
     def __init__(self):
         pass
