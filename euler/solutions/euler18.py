@@ -4,11 +4,12 @@ from euler.baseeuler import BaseEuler
 
 
 '''
-This is a really interesting problem and the solution is really simple and clever.
-The solution takes from graph theory. See notes below for details.
+This is a really interesting problem and the solution is really simple and
+clever.  The solution takes from graph theory. See notes below for details.
 Doing a brute force search on the triangle in this problem works fine but it's
 not optimal. Problem 67 is basically the same problem as this one, but the
 input data is too large for brute force. I need a clever algorithm...
+
 '''
 
 
@@ -36,7 +37,7 @@ def get_triangle(data):
     structure.
     '''
     return [[int(num) for num in line.split()]
-            for line in EULER_DATA.split('\n')]
+            for line in data.split('\n')]
 
 
 def find_max_sum(tri):
