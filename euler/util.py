@@ -74,3 +74,9 @@ def factorial(n):
         return 1
 
     return n * factorial(n - 1)
+
+
+def is_pandigital(n, l=9):
+    return len([i for j, i in enumerate([int(x) for x
+                                         in list('1234567890')[:l]])
+                if j not in [int(y) - 1 for y in str(n)]]) == 0
