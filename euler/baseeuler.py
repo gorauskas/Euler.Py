@@ -13,3 +13,7 @@ class BaseEuler(object):
     @abc.abstractproperty
     def problem(self):
         raise NotImplementedError
+
+    @abc.abstractproperty
+    def answer(self):
+        raise NotImplementedError

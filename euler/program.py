@@ -21,7 +21,7 @@ def run(args):
         if opts.verbose:
             print(e.problem)
 
-        e.solve()
+        print(e.answer)
 
     except (ImportError, TypeError):
 
