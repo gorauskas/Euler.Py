@@ -2,13 +2,18 @@
 
 from euler.baseeuler import BaseEuler
 
+
 class Euler(BaseEuler):
     def solve(self):
         lst = list(range(1, 101))
         res = (sum(lst)**2) - (sum(map(lambda x: x**2, lst)))
-        print("The difference between the sum of the squares\n" +
-              "and the square of the sum of the first 100 numbers\n" +
-              "is: %d" % res)
+        return res
+
+    @property
+    def answer(self):
+        return ("The difference between the sum of the squares\n" +
+                "and the square of the sum of the first 100 numbers\n" +
+                "is: %d" % self.solve())
 
     @property
     def problem(self):
