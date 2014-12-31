@@ -13,8 +13,12 @@ class Euler(BaseEuler):
 
     def solve(self):
         pf = self.prime_factors(600851475143)
+        return max(pf)
+
+    @property
+    def answer(self):
         print('The largest prime factor of the number 600851475143 is: %d'
-              % max(pf))
+              % self.solve())
 
     @property
     def problem(self):
