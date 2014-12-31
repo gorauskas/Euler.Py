@@ -8,8 +8,12 @@ class Euler(BaseEuler):
     def solve(self):
         res = [x for x in FibonacciSequence(4000000)
                if x % 2 == 0]
-        print('The sum of the even-valued terms in a Fibonacci sequence\n' +
-              'not exceeding 4 million is: %d' % sum(res))
+        return sum(res)
+
+    @property
+    def answer(self):
+        return ('The sum of the even-valued terms in a Fibonacci sequence\n' +
+                'not exceeding 4 million is: %d' % self.solve())
 
     @property
     def problem(self):
