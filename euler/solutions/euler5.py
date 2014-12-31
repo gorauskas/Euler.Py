@@ -25,8 +25,12 @@ class Euler(BaseEuler):
     def solve(self):
         lcm = lambda x, y: x * y // gcd(x, y)
         res = reduce(lcm, range(1, 21))
-        print('The smallest positive number that is evenly divisible\n' +
-              'by all of the numbers from 1 to 20 is: %d' % res)
+        return res
+
+    @property
+    def answer(self):
+        return ('The smallest positive number that is evenly divisible\n' +
+                'by all of the numbers from 1 to 20 is: %d' % self.solve())
 
     @property
     def problem(self):
