@@ -17,7 +17,11 @@ class Euler(BaseEuler):
 
             num += 2
 
-        print('The 10001st prime is %d' % res)
+        return res
+
+    @property
+    def answer(self):
+        return ('The 10001st prime is %d' % self.solve())
 
     @property
     def problem(self):
