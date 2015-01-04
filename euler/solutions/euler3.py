@@ -17,8 +17,8 @@ class Euler(BaseEuler):
 
     @property
     def answer(self):
-        print('The largest prime factor of the number 600851475143 is: %d'
-              % self.solve())
+        return ('The largest prime factor of the number 600851475143 is: %d'
+                % self.solve())
 
     @property
     def problem(self):
