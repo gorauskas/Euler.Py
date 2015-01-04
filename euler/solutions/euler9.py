@@ -5,8 +5,11 @@ from functools import reduce
 
 
 class Euler(BaseEuler):
+    def __init__(self):
+        self._triple = []
+        self._product = 0
+
     def solve(self):
-        t = []
         for i in range(1, 500):
             for j in range(i + 1, 500):
                 a = int(j * j - i * i)
@@ -14,12 +17,18 @@ class Euler(BaseEuler):
                 c = int(j * j + i * i)
 
                 if a + b + c == 1000:
-                    t = [a, b, c]
+                    self._triple = sorted([a, b, c])
                     break
 
-        print('The pythagorean triple whose sum equals 1000 is: ' +
-              '%s\nThe product of this triple is: %d'
-              % (sorted(t), reduce(lambda x, y: x * y, t)))
+        self._product = reduce(lambda x, y: x * y, self._triple)
+        return self._product
+
+    @property
+    def answer(self):
+        self.solve()
+        return ('The pythagorean triple whose sum equals 1000 is: ' +
+                '%s\nThe product of this triple is: %d'
+                % (self._triple, self._product))
 
     @property
     def problem(self):
