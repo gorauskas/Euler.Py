@@ -12,7 +12,11 @@ class Euler(BaseEuler):
                 break
             l.append(x)
 
-        print("The sum of all primes below 2 million is: %d" % sum(l))
+        return sum(l)
+
+    @property
+    def answer(self):
+        return ("The sum of all primes below 2 million is: %d" % self.solve())
 
     @property
     def problem(self):
