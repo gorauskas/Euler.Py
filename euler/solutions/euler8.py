@@ -31,16 +31,19 @@ EULER_NUMBERS = '''
 class Euler(BaseEuler):
     def solve(self):
         nums = [int(n) for n in EULER_NUMBERS if n not in ' \n']
-        greatest, glist, i = 0, [], 0
+        greatest, i = 0, 0
 
         while i + 13 <= len(nums):
             n = reduce(lambda x, y: x * y, nums[i:i + 13])
             if greatest < n:
                 greatest = n
-                glist = nums[i:i + 13]
             i += 1
 
-        print(glist, greatest)
+        return greatest
+
+    @property
+    def answer(self):
+        return ('The value of the product is %d' % self.solve())
 
     @property
     def problem(self):
