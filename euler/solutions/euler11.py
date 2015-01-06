@@ -30,42 +30,66 @@ def get_grid(s):
 
 
 class Euler(BaseEuler):
+    def __init__(self):
+        self._product = 0
+        self._X = 0
+        self._Y = 0
+        self._sequence = ()
+
     def solve(self):
         grid = get_grid(EULER_STRING_MATRIX)
         greatest = 0
-        res = ()
+
         for x in range(20):
             for y in range(16):
                 # L -> R
                 p = grid[x][y] * grid[x][y+1] * grid[x][y+2] * grid[x][y+3]
                 if p > greatest:
-                    res = (p, x, y, (grid[x][y], grid[x][y+1], grid[x][y+2], grid[x][y+3]))
+                    self.parse_res(p, x, y, (grid[x][y], grid[x][y+1],
+                                             grid[x][y+2], grid[x][y+3]))
                     greatest = p
 
                 # T -> B
                 p = grid[y][x] * grid[y+1][x] * grid[y+2][x] * grid[y+3][x]
                 if p > greatest:
-                    res = (p, x, y, (grid[y][x], grid[y+1][x], grid[y+2][x], grid[y+3][x]))
+                    self.parse_res(p, x, y, (grid[y][x], grid[y+1][x],
+                                             grid[y+2][x], grid[y+3][x]))
                     greatest = p
 
         for x in range(16):
             for y in range(16):
                 # TL -> BR
-                p = grid[x][y] * grid[x+1][y+1] * grid[x+2][y+2] * grid[x+3][y+3]
+                p = grid[x][y] * grid[x+1][y+1] * grid[x+2][y+2] * \
+                    grid[x+3][y+3]
                 if p > greatest:
-                    res = (p, x, y, (grid[x][y], grid[x+1][y+1], grid[x+2][y+2], grid[x+3][y+3]))
+                    self.parse_res(p, x, y, (grid[x][y], grid[x+1][y+1],
+                                             grid[x+2][y+2], grid[x+3][y+3]))
                     greatest = p
 
         for x in range(3, 20):
             for y in range(16):
                 # BL -> TR
-                p = grid[x][y] * grid[x-1][y+1] * grid[x-2][y+2] * grid[x-3][y+3]
+                p = grid[x][y] * grid[x-1][y+1] * grid[x-2][y+2] * \
+                    grid[x-3][y+3]
                 if p > greatest:
-                    res = (p, x, y, (grid[x][y], grid[x-1][y+1], grid[x-2][y+2], grid[x-3][y+3]))
+                    self.parse_res(p, x, y, (grid[x][y], grid[x-1][y+1],
+                                             grid[x-2][y+2], grid[x-3][y+3]))
                     greatest = p
 
-        print('The greatest product of four adjacent numbers in the grid is: ')
-        print('P: %d; LOC: %d,%d; SEQ: %s' % res)
+        return greatest
+
+    def parse_res(self, p, x, y, seq):
+        self._product = p
+        self._X = x
+        self._Y = y
+        self._sequence = seq
+
+    @property
+    def answer(self):
+        self.solve()
+        return ('The greatest product of four adjacent numbers in the grid ' +
+                'is:\nP: %d; LOC: %d,%d; SEQ: %s' % (self._product, self._X,
+                                                     self._Y, self._sequence))
 
     @property
     def problem(self):
