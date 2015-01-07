@@ -9,9 +9,12 @@ class Euler(BaseEuler):
     def solve(self):
         for i in TriangleNumberSequence():
             if number_of_divisors(i) > 500:
-                print('The first triangle number to have over 500 divisors ' +
-                      'is: %d' % i)
-                break
+                return i
+
+    @property
+    def answer(self):
+        return ('The first triangle number to have over 500 divisors ' +
+                'is: %d' % self.solve())
 
     @property
     def problem(self):
