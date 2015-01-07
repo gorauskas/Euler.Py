@@ -6,8 +6,12 @@ from euler.baseeuler import BaseEuler
 class Euler(BaseEuler):
     def solve(self):
         nums = [int(x) for x in EULER_NUMBERS.split('\n')]
-        print('The first ten digits of the sum of the large numbers is: %s'
-              % str(sum(nums))[:10])
+        return int(str(sum(nums))[:10])
+
+    @property
+    def answer(self):
+        return ('The first ten digits of the sum of the large numbers is: %s'
+                % str(self.solve()))
 
     @property
     def problem(self):
