@@ -17,17 +17,27 @@ def collatz_list(n):
 
 
 class Euler(BaseEuler):
+    def __init__(self):
+        self._start_number = 0
+        self._chain_len = 0
+
     def solve(self):
         nums = list(range(2, 1000000))
-        l, j, k = [], 0, 0
+        l = []
 
         for num in nums:
-            if len(collatz_list(num)) > j:
+            if len(collatz_list(num)) > self._chain_len:
                 l = collatz_list(num)
-                j = len(l)
-                k = num
+                self._chain_len = len(l)
+                self._start_number = num
 
-        print('Starting Number: %d; Chain Lenght: %d' % (k, j))
+        return self._start_number
+
+    @property
+    def answer(self):
+        self.solve()
+        return ('Starting Number: %d; Chain Lenght: ' +
+                '%d' % (self._start_number, self._chain_len))
 
     @property
     def problem(self):
