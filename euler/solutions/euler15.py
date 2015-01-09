@@ -20,9 +20,15 @@ C(x,y) = -----------
 
 
 class Euler(BaseEuler):
+    def _routes(self, x, y):
+        return factorial(x) / (factorial(x - y) * factorial(y))
+
     def solve(self):
-        routes = lambda x, y: factorial(x) / (factorial(x - y) * factorial(y))
-        print('There are %d routes through a 20x20 grid' % routes(40, 20))
+        return self._routes(40, 20)
+
+    @property
+    def answer(self):
+        return ('There are %d routes through a 20x20 grid' % self.solve())
 
     @property
     def problem(self):
