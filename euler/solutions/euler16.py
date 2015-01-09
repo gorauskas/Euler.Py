@@ -5,8 +5,12 @@ from euler.baseeuler import BaseEuler
 
 class Euler(BaseEuler):
     def solve(self):
-        print('The sum of the digits of the number 2^1000 is: %d'
-              % sum([int(x) for x in str(2 ** 1000)]))
+        return sum([int(x) for x in str(2 ** 1000)])
+
+    @property
+    def answer(self):
+        return ('The sum of the digits of the number 2^1000 is: %d'
+                % self.solve())
 
     @property
     def problem(self):
