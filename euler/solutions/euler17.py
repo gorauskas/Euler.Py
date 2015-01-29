@@ -69,8 +69,12 @@ def spell_number(n):
 class Euler(BaseEuler):
     def solve(self):
         res = [spell_number(x) for x in range(1, 1001)]
-        print('The numbers from 1 to 1000, when written out in words, ' +
-              'have %d letters.' % len(''.join(res).replace(' ', '')))
+        return len(''.join(res).replace(' ', ''))
+
+    @property
+    def answer(self):
+        return ('The numbers from 1 to 1000, when written out in words, ' +
+                'have %d letters.' % self.solve())
 
     @property
     def problem(self):
