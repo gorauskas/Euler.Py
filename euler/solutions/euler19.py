@@ -13,8 +13,12 @@ class Euler(BaseEuler):
                 if dt.date(y, m, 1).weekday() == 6:
                     res += 1
 
-        print('There were %d Sundays falling on the first of the month in '
-              % res + 'the twentieth century.')
+        return res
+
+    @property
+    def answer(self):
+        return ('There were %d Sundays falling on the first of the month in '
+                % self.solve() + 'the twentieth century.')
 
     @property
     def problem(self):
