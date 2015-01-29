@@ -81,8 +81,12 @@ def reduce_triangle(tri):
 
 class Euler(BaseEuler):
     def solve(self):
-        print('The maximum sum travelling from the top of the triangle to ' +
-              'the base is: %d' % find_max_sum(get_triangle(EULER_DATA)))
+        return find_max_sum(get_triangle(EULER_DATA))
+
+    @property
+    def answer(self):
+        return ('The maximum sum travelling from the top of the triangle to ' +
+                'the base is: %d' % self.solve())
 
     @property
     def problem(self):
