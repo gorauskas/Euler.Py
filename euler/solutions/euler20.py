@@ -6,8 +6,12 @@ from euler.util import factorial
 
 class Euler(BaseEuler):
     def solve(self):
-        print('The sum of the digits in the number 100! is: %d'
-              % sum([int(x) for x in str(factorial(100))]))
+        return sum([int(x) for x in str(factorial(100))])
+
+    @property
+    def answer(self):
+        return ('The sum of the digits in the number 100! is: %d'
+                % self.solve())
 
     @property
     def problem(self):
