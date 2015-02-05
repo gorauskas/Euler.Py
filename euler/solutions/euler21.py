@@ -9,7 +9,12 @@ class Euler(BaseEuler):
         res = sum([x for x in range(0, 10000)
                    if x == sum_of_divisors(sum_of_divisors(x))
                    and x != sum_of_divisors(x)])
-        print('The sum of all the amicable numbers under 10000 is: %d' % res)
+        return res
+
+    @property
+    def answer(self):
+        return ('The sum of all the amicable numbers under 10000 is: %d'
+                % self.solve())
 
     @property
     def problem(self):
