@@ -10,8 +10,12 @@ class Euler(BaseEuler):
             if l == 1000:
                 break
 
-        print('The first number in the Fibonacci sequence to contain 1000 ' +
-              'digits is: %d' % i)
+        return i
+
+    @property
+    def answer(self):
+        return ('The first number in the Fibonacci sequence to contain 1000 ' +
+                'digits is: %d' % self.solve())
 
     @property
     def problem(self):
