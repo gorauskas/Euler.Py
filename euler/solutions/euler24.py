@@ -6,9 +6,12 @@ from itertools import permutations as p
 
 class Euler(BaseEuler):
     def solve(self):
-        print('The millionth lexicographic permutation of the digits 0 to 9 ' +
-              'is: %s' % ''.join([str(x) for x in
-                                  sorted(p(range(10)))[999999]]))
+        return ''.join([str(x) for x in sorted(p(range(10)))[999999]])
+
+    @property
+    def answer(self):
+        return ('The millionth lexicographic permutation of the digits 0 ' +
+                'to 9 is: %s' % self.solve())
 
     @property
     def problem(self):
