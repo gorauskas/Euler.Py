@@ -17,8 +17,13 @@ class Euler(BaseEuler):
             if not any((n - a in abundants) for a in abundants):
                 res += n
 
-        print('The sum of all the positive integers which cannot be\n' +
-              'written as the sum of two abundant numbers is %d' % res)
+        return res
+
+    @property
+    def answer(self):
+        return ('The sum of all the positive integers which cannot be\n' +
+                'written as the sum of two abundant numbers is %d'
+                % self.solve())
 
     @property
     def problem(self):
@@ -36,11 +41,11 @@ Project Euler Problem 23:
     As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest
     number that can be written as the sum of two a numbers is 24. By
     mathematical analysis, it can be shown that all integers greater than 28123
-    can be written as the sum of two a numbers. However, this upper limit cannot
-    be reduced any further by analysis even though it is known that the greatest
-    number that cannot be expressed as the sum of two abundant numbers is less
-    than this limit.
+    can be written as the sum of two a numbers. However, this upper limit
+    cannot be reduced any further by analysis even though it is known that the
+    greatest number that cannot be expressed as the sum of two abundant numbers
+    is less than this limit.
 
-    Find the sum of all the positive integers which cannot be written as the sum
-    of two abundant numbers.
+    Find the sum of all the positive integers which cannot be written as the
+    sum of two abundant numbers.
 '''
