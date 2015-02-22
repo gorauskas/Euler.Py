@@ -11,8 +11,7 @@ class Euler(BaseEuler):
             if res > lgt[1]:
                 lgt = (n, res)
 
-        print('The value of d < 1000 for which 1/d contains the longest\n' +
-              'recurring cycle in its decimal fraction part is: %d' % lgt[0])
+        return lgt[0]
 
     def _cycle_len(self, n):
         rl, ql, r = [], 0, 1
@@ -24,6 +23,12 @@ class Euler(BaseEuler):
             r *= 10
             ql += 1
         return 0
+
+    @property
+    def answer(self):
+        return ('The value of d < 1000 for which 1/d contains the longest\n' +
+                'recurring cycle in its decimal fraction part is: %d'
+                % self.solve())
 
     @property
     def problem(self):
