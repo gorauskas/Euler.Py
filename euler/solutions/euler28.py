@@ -13,9 +13,12 @@ by a formula which is presented below
 class Euler(BaseEuler):
     def solve(self):
         n = 500  # we focus on the rings => a 1001x1001 spiral has 500 rings
-        res = ((16 * (n ** 3) + 26 * n) / 3 + 10 * (n ** 2)) + 1
-        print('The sum of the numbers on the diagonals in a 1001 by 1001 ' +
-              'spiral is %d' % res)
+        return ((16 * (n ** 3) + 26 * n) / 3 + 10 * (n ** 2)) + 1
+
+    @property
+    def answer(self):
+        return ('The sum of the numbers on the diagonals in a 1001 by 1001 ' +
+                'spiral is %d' % self.solve())
 
     @property
     def problem(self):
