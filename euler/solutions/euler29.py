@@ -10,7 +10,12 @@ class Euler(BaseEuler):
             for b in range(2, 101):
                 s.add(a ** b)
 
-        print('There are %d distinct terms in the sequence.' % len(s))
+        return len(s)
+
+    @property
+    def answer(self):
+        return ('There are %d distinct terms in the sequence.'
+                % self.solve())
 
     @property
     def problem(self):
