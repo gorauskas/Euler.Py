@@ -19,10 +19,13 @@ sum the result
 
 class Euler(BaseEuler):
     def solve(self):
-        res = [x for x in range(2, 354294)
-               if x == sum([int(y) ** 5 for y in str(x)])]
-        print('The sum of all the numbers that can be written as the sum of ' +
-              'fifth\npowers of their digits is %d' % sum(res))
+        return sum([x for x in range(2, 354294)
+                    if x == sum([int(y) ** 5 for y in str(x)])])
+
+    @property
+    def answer(self):
+        return ('The sum of all the numbers that can be written as the ' +
+                'sum of fifth\npowers of their digits is %d' % self.solve())
 
     @property
     def problem(self):
