@@ -16,7 +16,11 @@ class Euler(BaseEuler):
             for i in range(coin, EULER_TARGET + 1):
                 ways[i] += ways[i - coin]
 
-        print('£2 can be made using %d different ways.' % ways[EULER_TARGET])
+        return ways[EULER_TARGET]
+
+    @property
+    def answer(self):
+        return ('£2 can be made using %d different ways.' % self.solve())
 
     @property
     def problem(self):
