@@ -16,9 +16,13 @@ class Euler(BaseEuler):
                 if is_pandigital(int(s)):
                     p.add(i * j)
 
-        print('The sum of all products whose ' +
-              'multiplicand/multiplier/product\nidentity can be written as ' +
-              'a 1 through 9 pandigital is %d' % sum(p))
+        return sum(p)
+
+    @property
+    def answer(self):
+        return ('The sum of all products whose ' +
+                'multiplicand/multiplier/product\nidentity can be written ' +
+                'as a 1 through 9 pandigital is %d' % self.solve())
 
     @property
     def problem(self):
