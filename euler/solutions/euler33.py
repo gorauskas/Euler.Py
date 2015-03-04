@@ -14,7 +14,11 @@ class Euler(BaseEuler):
                     if k * ij == ki * j:
                         d *= ij / ki
 
-        print('The value of the denominator is: %d' % d)
+        return d
+
+    @property
+    def answer(self):
+        return ('The value of the denominator is: %d' % self.solve())
 
     @property
     def problem(self):
