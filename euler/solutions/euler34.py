@@ -13,13 +13,14 @@ writing a brute force search algorithm, we must first determine our bounds. The
 lower bound is 10 because single digit candidates are to be ignored. The upper
 bound we discover as follows (from Wikipedia):
 
-If n is a natural number of d digits that is a factorion, then 10d − 1 ≤ n ≤ 9!d
-and this fails to hold for d ≥ 8. Thus n has 7 digits and the maximum sum of
-factorials of digits for a 7 digit number is 9!7 = 2,540,160, which is the upper
-bound.
+If n is a natural number of d digits that is a factorion, then
+10d − 1 ≤ n ≤ 9!d and this fails to hold for d ≥ 8. Thus n has 7 digits and the
+maximum sum of factorials of digits for a 7 digit number is 9!7 = 2,540,160,
+which is the upper bound.
 
 Afterwards, we learned 50,000 worked just fine.
 '''
+
 
 class Euler(BaseEuler):
     def solve(self):
@@ -33,8 +34,12 @@ class Euler(BaseEuler):
             if n == x:
                 r += n
 
-        print('The sum of all numbers which are equal to the sum of the ' +
-              'factorial of\ntheir digits is %d' % r)
+        return r
+
+    @property
+    def answer(self):
+        return ('The sum of all numbers which are equal to the sum of the ' +
+                'factorial of\ntheir digits is %d' % self.solve())
 
     @property
     def problem(self):
