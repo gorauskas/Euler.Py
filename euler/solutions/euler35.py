@@ -14,7 +14,7 @@ class Euler(BaseEuler):
             if self._check_rotations([int(d) for d in str(prime)], prime):
                 res.append(prime)
 
-        print('There are %d circular primes below 1 million.' % len(res))
+        return len(res)
 
     def _check_rotations(self, l, n):
         '''
@@ -34,6 +34,10 @@ class Euler(BaseEuler):
                 return False
             l = cdr
         return True
+
+    @property
+    def answer(self):
+        return ('There are %d circular primes below 1 million.' % self.solve())
 
     @property
     def problem(self):
