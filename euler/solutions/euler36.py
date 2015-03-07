@@ -11,8 +11,12 @@ class Euler(BaseEuler):
                 if bin(num)[2:] == (bin(num)[2:])[::-1]:
                     L.append(num)
 
-        print('The sum of all palindromic numbers in base 10 and 2 ' +
-              'is %d' % sum(L))
+        return sum(L)
+
+    @property
+    def answer(self):
+        return ('The sum of all palindromic numbers in base 10 and 2 ' +
+                'is %d' % self.solve())
 
     @property
     def problem(self):
