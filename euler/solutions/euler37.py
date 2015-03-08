@@ -17,14 +17,18 @@ class Euler(BaseEuler):
                 if is_prime(n) and self._is_truncatable(n):
                     L.append(n)
 
-        print('The sum of the only eleven primes that are both truncatable\n' +
-              'left and right is %d' % sum(L))
+        return sum(L)
 
     def _is_truncatable(self, n):
         for d in range(1, len(str(n))):
             if not is_prime(str(n)[d:]) or not is_prime(str(n)[:d]):
                 return False
         return True
+
+    @property
+    def answer(self):
+        return ('The sum of the only eleven primes that are both truncatable\n' +
+                'left and right is %d' % self.solve())
 
     @property
     def problem(self):
