@@ -11,7 +11,12 @@ class Euler(BaseEuler):
             if is_pandigital(p):
                 break
 
-        print('The largest 1 to 9 pandigital 9-digit number is %d' % int(p))
+        return int(p)
+
+    @property
+    def answer(self):
+        return ('The largest 1 to 9 pandigital 9-digit number is %d'
+                % self.solve())
 
     @property
     def problem(self):
