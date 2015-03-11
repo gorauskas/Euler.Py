@@ -24,7 +24,11 @@ class Euler(BaseEuler):
 
             p += 2
 
-        print('The number of solutions is maximized for %d' % int(result))
+        return int(result)
+
+    @property
+    def answer(self):
+        return ('The number of solutions is maximized for %d' % self.solve())
 
     @property
     def problem(self):
