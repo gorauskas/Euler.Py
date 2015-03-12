@@ -6,9 +6,12 @@ from euler.baseeuler import BaseEuler
 class Euler(BaseEuler):
     def solve(self):
         LS = ''.join(list(str(n) for n in range(1000000)))
-        ans = int(LS[1]) * int(LS[10]) * int(LS[100]) * int(LS[1000]) * \
+        return int(LS[1]) * int(LS[10]) * int(LS[100]) * int(LS[1000]) * \
             int(LS[10000]) * int(LS[100000]) * int(LS[1000000])
-        print('The value is %d' % ans)
+
+    @property
+    def answer(self):
+        return ('The value is %d' % self.solve())
 
     @property
     def problem(self):
