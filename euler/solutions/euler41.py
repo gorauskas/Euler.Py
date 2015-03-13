@@ -25,7 +25,12 @@ class Euler(BaseEuler):
         while not (is_pandigital(n, 7) and is_prime(n)):
             n -= 2
 
-        print('The largest n-digit pandigital prime that exists is %d' % n)
+        return n
+
+    @property
+    def answer(self):
+        return ('The largest n-digit pandigital prime that exists is %d'
+                % self.solve())
 
     @property
     def problem(self):
