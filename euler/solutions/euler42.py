@@ -18,9 +18,13 @@ class Euler(BaseEuler):
             def word_score(word):
                 return sum(abs(64 - ord(letter)) for letter in word)
 
-            print('There are %d triangle words in the file.'
-                  % sum(is_triangle_number(word_score(word))
-                        for word in words))
+            return sum(is_triangle_number(word_score(word))
+                       for word in words)
+
+    @property
+    def answer(self):
+        return ('There are %d triangle words in the file.'
+                % self.solve())
 
     @property
     def problem(self):
