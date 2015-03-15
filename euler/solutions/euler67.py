@@ -9,8 +9,12 @@ class Euler(BaseEuler):
     def solve(self):
         fp = path.join(getcwd(), 'euler/resources/triangle.txt')
         with open(fp, 'r') as f:
-            print('The maximum sum travelling from the top of the triangle ' +
-                  'to the base is: %d' % find_max_sum(get_triangle(f.read())))
+            return find_max_sum(get_triangle(f.read()))
+
+    @property
+    def answer(self):
+        return ('The maximum sum travelling from the top of the triangle ' +
+                'to the base is: %d' % self.solve())
 
     @property
     def problem(self):
