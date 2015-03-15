@@ -27,13 +27,13 @@ nose at the root of the package, like so:
 
 ## How it works...
 
-The main program will try to import a module dynamically from `euler.solutions`
-package based on the problem number passed in via the command line. From that
-module it will load a class called `Euler`. If the user request verbose output,
-the program calls the `problem` property of the loaded `Euler` class and then
-calls the `answer` property.
+The main program will try to import a module dynamically from the
+`euler.solutions` package based on the problem number passed in via the command
+line. From that module, it will load a class called `Euler`. If the user
+requests verbose output, the program calls the `problem` property of the loaded
+`Euler` class and then calls the `answer` property.
 
 All `Euler` classes are implemented using the abstract base class strategy to
 define a common interface for all classes. This is the key contruct that allows
-modules to be loaded dynamically. Look at the files `baseeuler.py` and
-`program.py` for the gorry details.
+modules to be loaded and executed dynamically. Look at the files `baseeuler.py`
+and `program.py` for the gorry details.
