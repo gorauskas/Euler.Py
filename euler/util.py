@@ -2,6 +2,7 @@
 
 import argparse
 import math
+from euler import __version__
 
 
 def parse_options(args):
@@ -11,7 +12,8 @@ def parse_options(args):
 
     parser.add_argument('-V', '--version',
                         action='version',
-                        version='%(prog)s 0.1.0 - written by Jonas Gorauskas')
+                        version='%(prog)s {vrs} '.format(vrs=__version__) +
+                        '- written by Jonas Gorauskas')
 
     parser.add_argument('-v', '--verbose',
                         action='store_true',
