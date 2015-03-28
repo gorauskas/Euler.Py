@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from euler.solutions.euler3 import Euler
+from euler.solutions.euler4 import Euler
 import unittest
 
 
