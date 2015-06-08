@@ -11,13 +11,13 @@ class Euler(BaseEuler):
         ps = set(pl)
         for p in pl:
             p = [p, p + 3330, p + 6660]
-        if p[0] == 1487:
-            continue
-        if any(x not in ps for x in p[1:]):
-            continue
-        if any(tuple(str(x)) not in perms(str(p[0])) for x in p[1:]):
-            continue
-        return int(''.join([str(x) for x in p]))
+            if p[0] == 1487:
+                continue
+            if any(x not in ps for x in p[1:]):
+                continue
+            if any(tuple(str(x)) not in perms(str(p[0])) for x in p[1:]):
+                continue
+            return int(''.join([str(x) for x in p]))
 
     @property
     def answer(self):
