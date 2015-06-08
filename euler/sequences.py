@@ -58,6 +58,10 @@ class TriangleNumberSequence:
 
 
 def PrimeGenerator():
+    '''
+    This prime number generator will churn out primes from the first prime
+    above 0 (2) until you tell it to stop.
+    '''
     D = {}
     yield 2
     for q in itertools.islice(itertools.count(3), 0, None, 2):
@@ -70,3 +74,25 @@ def PrimeGenerator():
             while x in D:
                 x += 2 * p
             D[x] = p
+
+
+def PrimeRange(start, end=None):
+    '''
+    This prime number generator will churn out primes whose number value are
+    higher than `start` and lower than `end`.
+
+    e.g.: `print(list(PrimeRange(10, 100)))` return the following:
+
+    [11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79,
+     83, 89, 97]
+    '''
+    if not end:
+        end = start
+        start = 2
+    m = set()
+    for i in range(2, end):
+        if i not in m:
+            if i >= start:
+                yield i
+            if i * i < end:
+                m.update(range(i * i, end, i))
