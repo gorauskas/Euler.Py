@@ -17,8 +17,8 @@ class Euler(BaseEuler):
 
     @property
     def answer(self):
-        return ('There are %d fractions whose numerators have more digits\n' +
-                'than then denominator.' % self.solve())
+        return ('There are %d fractions whose numerators ' % self.solve() +
+                'have more digits\nthan then denominator.')
 
     @property
     def problem(self):
