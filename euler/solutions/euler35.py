@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
 from euler.baseeuler import BaseEuler
+from euler.sequences import PrimeRange
 from euler.util import is_prime
 
 
 class Euler(BaseEuler):
     def solve(self):
         # all primes less than 1M
-        primes = [p for p in range(1, 1000000) if is_prime(p)]
+        primes = list(PrimeRange(1, 1000000))
         res = []
 
         for prime in primes:
