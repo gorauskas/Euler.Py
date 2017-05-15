@@ -82,14 +82,3 @@ def is_pandigital(n, l=9):
     return len([i for j, i in enumerate([int(x) for x
                                          in list('1234567890')[:l]])
                 if j not in [int(y) - 1 for y in str(n)]]) == 0
-
-
-# Return a list of primes from 2 to smaller than n
-def gen_primes(n):
-    s = [True] * (n // 2)
-
-    for i in range(3, int(n ** 0.5) + 1, 2):
-        if s[i // 2]:
-            s[i * i // 2::i] = [False] * ((n - i * i - 1) // (2 * i) + 1)
-
-    return [2] + [2 * j + 1 for j in range(1, n // 2) if s[j]]
