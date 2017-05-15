@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 
 from euler.baseeuler import BaseEuler
-from euler.util import is_prime, gen_primes
+from euler.sequences import PrimeRange
+from euler.util import is_prime
 import itertools
 
 
 class Euler(BaseEuler):
     def __init__(self):
-        self._primes = gen_primes(10000)
+        # self._primes = gen_primes(10000)
+        self._primes = list(PrimeRange(1, 10000))
         self._ss = 5
 
     def solve(self):
