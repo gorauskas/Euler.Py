@@ -1,0 +1,18 @@
+{
+    "python.jediEnabled": false,
+    "python.autoComplete.addBrackets": true,
+    "python.formatting.autopep8Args": ["--max-line-length", "120", "--experimental"],
+    "python.pythonPath": "C:\\Program Files\\Python37\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.unitTest.unittestEnabled": true,
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        "tests",
+        "-p",
+        "test*.py"
+    ],
+}
